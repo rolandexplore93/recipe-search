@@ -8,8 +8,6 @@ import Recipes from './components/Recipes';
 
     const [recipes, setRecipes] = useState([])
 
-    console.log(recipes)
-    
     // const getRecipe = useEffect(() => {
     //   console.log("Running")
     // }, [])
@@ -21,7 +19,7 @@ import Recipes from './components/Recipes';
         // Get the recipe input from form element using form name attr.value
         const recipeName = e.target.elements.recipeName.value;
 
-        const callToAPI = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&query=${recipeName}&number=5&addRecipeInformation=true`)
+        const callToAPI = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&query=${recipeName}&number=10&addRecipeInformation=true`)
         const dataReport = await callToAPI.json()
         const data = dataReport.results
         setRecipes(data)

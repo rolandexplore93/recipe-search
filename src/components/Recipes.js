@@ -1,21 +1,41 @@
 import React from 'react'
 
 const Recipes = (props) => {
-    console.log(props)
-    return (
-       <div>
-            {
-                props.recipes.map((recipe) => {
-                return (
-                    <div key={recipe.id} style={{border: '3px solid red'}}>
-                    <h4>{recipe.title}</h4>
-                    <img src={recipe.image} alt={recipe.title} />
-                    <p><strong>For more info on ingredients & preparation about this recipe:</strong> Visit <a href={recipe.sourceUrl} target='_blank'>{recipe.sourceName}</a> </p>
 
-                    </div>
-                )
-                })
-            }
+    return (
+       <div className='container'>
+           <div className='row'>
+                {
+                    props.recipes.map((recipe) => {
+                    return (
+                        <div className='col-md-4' style={{ marginBottom: "2rem"}} key={recipe.id}>
+                            <div className='recipes__box' style={{border: '3px solid red'}}>
+                                <div className='recipes__text'>
+                                    <h4 className='recipes__title'>
+                                        {
+                                            recipe.title.length < 20 ? `${recipe.title}` : `${recipe.title.substring(0, 25)}...`
+                                        }
+                                    </h4>
+                                    
+                                </div>
+                                <img
+                                    className='recipe__box-img'
+                                    src={recipe.image} 
+                                    alt={recipe.title} />
+                                <p><strong>For more info on ingredients & preparation about this recipe: </strong>
+                                {
+                                    recipe.sourceName ? <a href={recipe.sourceUrl} target='_blank'>{recipe.sourceName}</a> : <span>Source link unavailable</span>
+                                }  
+                                </p>
+                                <button className='recipe_buttons'>View recipe</button>
+
+                            </div>
+
+                        </div>
+                    )
+                    })
+                }
+           </div>
        </div>
     )
 }
