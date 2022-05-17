@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Recipes = (props) => {
 
@@ -27,7 +28,9 @@ const Recipes = (props) => {
                                     recipe.sourceName ? <a href={recipe.sourceUrl} target='_blank'>{recipe.sourceName}</a> : <span>Source link unavailable</span>
                                 }  
                                 </p>
-                                <button className='recipe_buttons'>View recipe</button>
+                                <button className='recipe_buttons'>
+                                    <Link to={{pathname: `/recipe/${recipe.id}`}}>View Recipe</Link>
+                                </button>
 
                             </div>
 
