@@ -29,7 +29,7 @@ const Recipes = (props) => {
                                 }  
                                 </p>
                                 <button className='recipe_buttons'>
-                                    <Link to={{pathname: `/recipe/${recipe.id}`}}>View Recipe</Link>
+                                    <Link to={{pathname: `/recipe/${recipe.id}`}} target="_blank" rel="noreferrer noopener">View Recipe</Link>
                                 </button>
 
                             </div>

@@ -31,7 +31,7 @@ import Recipes from './components/Recipes';
       <header className="App-header">
         <h1 className="title">Recipe Search</h1>
       </header>
-      <Form getRecipe={getRecipe}/>
+      <Form getRecipe={getRecipe} />
       <Recipes recipes={recipes} />
       
       
