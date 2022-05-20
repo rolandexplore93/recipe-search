@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useEffect } from 'react';
 import './App.css';
 import Form from './components/Form';  
+// import Recipe from './components/Recipe';
 import Recipes from './components/Recipes';
   
   const App = () => {
@@ -33,7 +34,6 @@ import Recipes from './components/Recipes';
       </header>
       <Form getRecipe={getRecipe} />
       <Recipes recipes={recipes} />
-      
       
     </div>
   )

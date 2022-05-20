@@ -1,7 +1,9 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 const Recipes = (props) => {
+    const navigate  = useNavigate()
+    console.log(props)
 
     return (
        <div className='container'>
@@ -17,7 +19,6 @@ const Recipes = (props) => {
                                             recipe.title.length < 20 ? `${recipe.title}` : `${recipe.title.substring(0, 25)}...`
                                         }
                                     </h4>
-                                    
                                 </div>
                                 <img
                                     className='recipe__box-img'
@@ -28,8 +29,14 @@ const Recipes = (props) => {
                                     recipe.sourceName ? <a href={recipe.sourceUrl} target='_blank'>{recipe.sourceName}</a> : <span>Source link unavailable</span>
                                 }  
                                 </p>
-                                <button className='recipe_buttons'>
-                                    <Link to={{pathname: `/recipe/${recipe.id}`}} target="_blank" rel="noreferrer noopener">View Recipe</Link>
+                                <button className='recipe_buttons' onClick={() => navigate(`/recipe/${recipe.id}`, {
+                                    state: {recipe: recipe.title}
+                                })}>
+                                    {/* <Link to={`/recipe/${recipe.id}`}
+                                    state={{ from: "Hello World" }}
+                                        target="_blank" rel="noreferrer noopener">View Recipe
+                                    </Link> */}
+                                    View Recipe
                                 </button>
 
                             </div>
@@ -44,3 +51,12 @@ const Recipes = (props) => {
 }
 
 export default Recipes
+
+{/* <Link to={{
+                                        pathname: `/recipe/${recipe.id}`,
+                                        state: "Hello World"
+                                        // state: { recipe: recipe.title },
+                                        // data: recipe
+                                    }} 
+                                        target="_blank" rel="noreferrer noopener">View Recipe
+                                    </Link> */}
