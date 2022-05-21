@@ -23,15 +23,27 @@ const Recipe = (props) => {
         // console.log(newData.results[0])
         setPerRecipe(newData.results[0])
       })
-      .catch(error => {console.log(error, "Error in data fetching")})
+      .catch(error => {console.log(error, "API Data Fetcing Limit Exceeded: Error in data fetching")})
       
     }, [])
 
-
   return (
-    <div>
-      For each Recipe page
-      <button onClick={() => navigate(-1)} >Go Back</button>
+    <div className='container'>
+      { perRecipe.length !== 0 && 
+        <div className='active-recipe'>
+          <img className='active-recipe__img' src={perRecipe.image} alt={perRecipe.title}/>
+          <h3 className='active-recipe__title'>{perRecipe.title}</h3>
+          <h4 className='active-recipe__publisher'>
+            Publisher: 
+            {perRecipe.sourceName ? <span>{ perRecipe.sourceName}</span> : <span>Publisher name unavailable</span>}  
+          </h4>
+          <p className='active-recipe__website'>
+            Website: <span><a href={perRecipe.sourceUrl} target="_blank">{perRecipe.sourceUrl}</a></span>
+          </p>
+          
+          <button className='active-recipe__button' onClick={() => navigate('/')}>Go Home</button>
+        </div>
+      }
     </div>
   )
 }

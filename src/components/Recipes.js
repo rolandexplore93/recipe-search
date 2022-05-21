@@ -24,7 +24,7 @@ const Recipes = (props) => {
                                     className='recipe__box-img'
                                     src={recipe.image} 
                                     alt={recipe.title} />
-                                <p><strong>For more info on ingredients & preparation about this recipe: </strong>
+                                <p className='recipe__sourceName'><strong>For more info on ingredients & preparation about this recipe: </strong>
                                 {
                                     recipe.sourceName ? <a href={recipe.sourceUrl} target='_blank'>{recipe.sourceName}</a> : <span>Source link unavailable</span>
                                 }  
