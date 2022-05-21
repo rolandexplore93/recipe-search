@@ -119,11 +119,12 @@ input:-webkit-autofill {
 
 .active-recipe {
   margin: 0 auto;
+  padding-top: 100px;
   width: 60%;
 }
 
 .active-recipe__img {
-  height: 500px !important;
+  height: 400px !important;
 }
 
 .active-recipe__title {

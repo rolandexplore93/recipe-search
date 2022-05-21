@@ -7,12 +7,9 @@ const API_KEY = 'b894a500258642a2a9fc24e5e146c332'
 const Recipe = (props) => {
     const location = useLocation()
     const navigate = useNavigate()
-    // console.log(location)
     // console.log(location.state.recipe)
 
-
     const [perRecipe, setPerRecipe] = useState([])
-    console.log(perRecipe)
 
     useEffect(() => {
       console.log("Tested");

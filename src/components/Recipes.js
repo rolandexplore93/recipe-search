@@ -51,12 +51,3 @@ const Recipes = (props) => {
 }
 
 export default Recipes
-
-{/* <Link to={{
-                                        pathname: `/recipe/${recipe.id}`,
-                                        state: "Hello World"
-                                        // state: { recipe: recipe.title },
-                                        // data: recipe
-                                    }} 
-                                        target="_blank" rel="noreferrer noopener">View Recipe
-                                    </Link> */}
