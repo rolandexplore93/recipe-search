@@ -12,7 +12,7 @@ const Recipes = (props) => {
                     props.recipes.map((recipe) => {
                     return (
                         <div className='col-md-4' style={{ marginBottom: "2rem"}} key={recipe.id}>
-                            <div className='recipes__box' style={{border: '3px solid red'}}>
+                            <div className='recipes__box'>
                                 <div className='recipes__text'>
                                     <h4 className='recipes__title'>
                                         {
@@ -24,9 +24,9 @@ const Recipes = (props) => {
                                     className='recipe__box-img'
                                     src={recipe.image} 
                                     alt={recipe.title} />
-                                <p className='recipe__sourceName'><strong>For more info on ingredients & preparation about this recipe: </strong>
+                                <p className='recipe__sourceName'><strong>Publisher: </strong>
                                 {
-                                    recipe.sourceName ? <a href={recipe.sourceUrl} target='_blank'>{recipe.sourceName}</a> : <span>Source link unavailable</span>
+                                    recipe.sourceName ? <span><strong>{recipe.sourceName}</strong></span> : <span><strong>...Anonymous</strong></span>
                                 }  
                                 </p>
                                 <button className='recipe_buttons' onClick={() => navigate(`/recipe/${recipe.id}`, {

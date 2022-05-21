@@ -24,7 +24,16 @@ import Recipes from './components/Recipes';
         const dataReport = await callToAPI.json()
         const data = dataReport.results
         setRecipes(data)
+
+        const storedRecipes = JSON.stringify(data)
+        localStorage.setItem("recipes", storedRecipes)
     }
+
+    useEffect(() => {
+      const retrieveRecipes = localStorage.getItem("recipes");
+      const savedRecipes = JSON.parse(retrieveRecipes);
+      setRecipes(savedRecipes)
+    }, [])
 
 
   return (
