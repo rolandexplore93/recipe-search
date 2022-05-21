@@ -29,11 +29,11 @@ import Recipes from './components/Recipes';
         localStorage.setItem("recipes", storedRecipes)
     }
 
-    useEffect(() => {
-      const retrieveRecipes = localStorage.getItem("recipes");
-      const savedRecipes = JSON.parse(retrieveRecipes);
-      setRecipes(savedRecipes)
-    }, [])
+    // useEffect(() => {
+    //   const retrieveRecipes = localStorage.getItem("recipes");
+    //   const savedRecipes = JSON.parse(retrieveRecipes);
+    //   setRecipes(savedRecipes)
+    // }, [])
 
 
   return (
