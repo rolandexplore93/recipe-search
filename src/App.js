@@ -30,9 +30,13 @@ import Recipes from './components/Recipes';
     }
 
     useEffect(() => {
-      const retrieveRecipes = localStorage.getItem("recipes");
-      const savedRecipes = JSON.parse(retrieveRecipes);
-      setRecipes(savedRecipes)
+      if (localStorage.length > 0){
+        const retrieveRecipes = localStorage.getItem("recipes");
+        const savedRecipes = JSON.parse(retrieveRecipes);
+        setRecipes(savedRecipes)
+      } else {
+        setRecipes([])
+      }
     }, [])
 
 
@@ -42,6 +46,14 @@ import Recipes from './components/Recipes';
         <h1 className="title">Recipe Search!</h1>
       </header>
       <Form getRecipe={getRecipe} />
+      <button className='clearButton' onClick={() => {
+        if (window.confirm("You are about to remove all the recipes?")){
+          window.localStorage.removeItem("recipes");
+          window.location.reload()
+        } else {
+          window.location.reload()
+        };
+      }}>Clear Search</button>
       <Recipes recipes={recipes} />
       
     </div>

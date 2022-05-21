@@ -9,6 +9,7 @@ const Form = (props) => {
                 placeholder='Enter recipe name'
             />
             <button className='form__button'>Search</button>
+            
         </form>
     )
 }

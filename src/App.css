@@ -94,8 +94,8 @@ button:focus {
   padding: 0.4rem;
 }
 
-.form__button {
-  border: solid 2px #e74c3c;
+.form__button, .clearButton {
+  border: solid 2px #2c3e50;
   background: transparent;
   padding: 0.2rem 0.9rem;
   margin: 0 0.2rem;
@@ -104,6 +104,10 @@ button:focus {
   text-transform: uppercase;
   font-weight: 500;
   margin-left: 0.7rem;
+}
+
+.clearButton {
+  margin-bottom: 2rem;
 }
 
 input[type="text"] { 
