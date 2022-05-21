@@ -39,7 +39,7 @@ import Recipes from './components/Recipes';
   return (
     <div className="App">
       <header className="App-header">
-        <h1 className="title">Recipe Search</h1>
+        <h1 className="title">Recipe Search!</h1>
       </header>
       <Form getRecipe={getRecipe} />
       <Recipes recipes={recipes} />
