@@ -30,7 +30,7 @@ Next: `cd recipe-search`
 
 Then, install react and other packages
 #### Dependencies to install
-> Intsall react
+> Install react
 > Install axios
 
 Finally `npm start`
