@@ -30,7 +30,7 @@ Next: `cd recipe-search`
 
 Then, install react and other packages
 #### Dependencies to install
-> Install react
+> Installation: npm install --legacy-peer-deps
 > Install axios
 
 Finally `npm start`
