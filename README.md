@@ -28,9 +28,9 @@ The following step will help you get the local copy of this project and run it s
 
 Next: `cd recipe-search`
 
-Then, install react and other packages
-#### Dependencies to install
+Then, installation to update all dependencies inside package.json
 > Installation: npm install --legacy-peer-deps
+#### Dependencies to install
 > Install axios
 
 Finally `npm start`
